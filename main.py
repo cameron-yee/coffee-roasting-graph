@@ -2,13 +2,20 @@ import matplotlib.pyplot as plt
 
 
 def read_values():
-    f = open("config.txt", "r")
-    lines = f.readlines()
+    try:
+        f = open("config.txt", "r")
+        lines = [x for x in f.readlines() if x != "\n"]
 
-    return (
-        [float(x.strip()) for x in lines[:1]][0],
-        [float(x.strip()) for x in lines[2:]]
-    )
+        return (
+            float(lines[0].strip()),
+            [float(x.strip()) for x in lines[1:]]
+        )
+    except ValueError:
+        print('Invalid values found in config.txt')
+        quit(1)
+    except FileNotFoundError:
+        print('No config.txt file found')
+        quit(1)
 
 
 def main():
