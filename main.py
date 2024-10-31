@@ -19,12 +19,14 @@ def read_values():
 
 
 def main():
-    time, temps = read_values()
+    time_interval, temps = read_values()
+    times = [x * time_interval + time_interval for x in range(len(temps))]
 
-    plt.plot(temps, scalex=False, scaley=False)
+    plt.plot(times, temps, scalex=False, scaley=False)
 
     plt.xlabel('Minutes')
-    plt.xlim(0, time)
+    plt.xlim(0, times[-1] + 1)
+    plt.xticks(times)
 
     plt.ylabel('Temperature')
     plt.ylim(0, max(temps) + 100)
