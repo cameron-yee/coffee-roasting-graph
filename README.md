@@ -5,8 +5,7 @@
 Add values in `config.txt` file.
 
 - First line should be time interval, e.g., 0.5 if you're measuring every 30s.
-- Second line should be empty.
-- Temps should start on third line.
+- Add temperatures on separate lines.
 
 Run `python3 main.py` to graph values.
 
