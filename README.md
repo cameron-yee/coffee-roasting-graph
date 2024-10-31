@@ -1,0 +1,29 @@
+# coffee-roasting-graph
+
+## Usage
+
+Add values in `config.txt` file.
+
+- First line should be time interval, e.g., 0.5 if you're measuring every 30s.
+- Second line should be empty.
+- Temps should start on third line.
+
+Run `python3 main.py` to graph values.
+
+### Example config.txt file
+
+```
+0.5
+
+361
+367
+378
+387
+395
+405
+413
+422
+433
+437
+440
+```
